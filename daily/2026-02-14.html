@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI产品日报 2026-02-14</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --text:#e8eefc;
+      --muted:#b9c6e6;
+      --accent:#7aa2ff;
+      --accent2:#52e0c4;
+      --warn:#ffcf5a;
+      --border:rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), #070c16 65%);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
+    }
+    .wrap{max-width:980px;margin:0 auto;padding:48px 28px 56px}
+    .hero{
+      padding:28px 28px 22px;
+      border:1px solid var(--border);
+      background:linear-gradient(135deg, rgba(122,162,255,.16), rgba(82,224,196,.10));
+      border-radius:18px;
+      box-shadow:0 16px 60px rgba(0,0,0,.35);
+    }
+    .kicker{color:var(--muted);font-size:14px;letter-spacing:.3px}
+    h1{margin:10px 0 6px;font-size:30px;line-height:1.15}
+    h2{margin:0 0 4px;font-size:18px;color:var(--muted);font-weight:600}
+    .meta{margin-top:10px;color:var(--muted);font-size:13px}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
+    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .pill{font-size:12px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.04)}
+    .pill b{color:var(--text);font-weight:700}
+
+    .section{margin-top:18px;border:1px solid var(--border);background:rgba(15,27,51,.72);border-radius:18px;overflow:hidden}
+    .section .hd{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .section .hd .title{font-weight:800}
+    .section .hd .tag{font-size:12px;color:var(--muted)}
+    .section .bd{padding:16px 18px 18px}
+
+    .bullets{margin:0;padding-left:18px}
+    .bullets li{margin:8px 0;color:var(--text)}
+    .bullets li span{color:var(--muted)}
+
+    .cards{display:grid;grid-template-columns:1fr;gap:12px}
+    .item{
+      border:1px solid var(--border);
+      background:rgba(8,12,22,.35);
+      border-radius:14px;
+      padding:12px 12px 10px;
+    }
+    .item .t{font-weight:800;margin-bottom:6px}
+    .item .p{color:var(--muted);margin:0 0 8px;line-height:1.5}
+    .item .why{margin:0 0 8px;line-height:1.5}
+    .item .why b{color:var(--warn)}
+    .links{display:flex;flex-wrap:wrap;gap:10px}
+    .links a{color:var(--accent);text-decoration:none;font-size:12.5px;word-break:break-all}
+    .links a:hover{text-decoration:underline}
+
+    .two{display:grid;grid-template-columns:1fr;gap:12px}
+    @media (min-width: 900px){
+      .grid{grid-template-columns: 1.2fr .8fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .two{grid-template-columns:1fr 1fr}
+    }
+
+    .summarylist{margin:10px 0 0;padding-left:0;list-style:none}
+    .summarylist li{padding:10px 12px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.04);margin-top:10px}
+    .en{display:block;font-weight:800}
+    .cn{display:block;color:var(--muted);margin-top:4px}
+
+    .footer{margin-top:18px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .brand{color:var(--muted)}
+    .brand b{color:var(--text)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="kicker">AI Product Daily · 5-minute Deep Read</div>
+      <h1>《AI产品日报》（5分钟深读版）</h1>
+      <h2>Jason 专版</h2>
+      <div class="meta">时间范围：过去24小时（截至 2026-02-14 07:00，Asia/Shanghai）</div>
+
+      <ul class="summarylist">
+        <li><span class="en">AI enters daily workflows fast.</span><span class="cn">AI正快速嵌入日常办公链路。</span></li>
+        <li><span class="en">Marketing AI gets more executional.</span><span class="cn">营销AI从“写文案”走向“投放执行”。</span></li>
+        <li><span class="en">Analytics shifts to audio and briefs.</span><span class="cn">数据解读正转向语音与摘要化。</span></li>
+        <li><span class="en">Distribution beats model novelty today.</span><span class="cn">今天更重要的是分发而非新模型。</span></li>
+        <li><span class="en">Trust and governance become product features.</span><span class="cn">合规与可信能力正产品化。</span></li>
+      </ul>
+
+      <div class="pillrow">
+        <div class="pill"><b>重点场景</b> 泛营销</div>
+        <div class="pill"><b>重点场景</b> 数据分析</div>
+        <div class="pill"><b>重点场景</b> 内容生成</div>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top:18px">
+      <div class="hd"><div class="title">A. 今日必看 Top 8</div><div class="tag">每条：是什么 · 为什么重要 · 适用人群 · 来源</div></div>
+      <div class="bd">
+        <div class="cards">
+          <div class="item">
+            <div class="t">1) Google Docs 上线 Gemini Audio Summaries</div>
+            <p class="p">是什么：Google Docs 可把长文档生成“可听摘要”。</p>
+            <p class="why"><b>为什么重要：</b>缩短报告阅读时间，利好复盘与管理汇报。</p>
+            <p class="p">适用：内容团队、市场运营、咨询、管理层</p>
+            <div class="links">
+              <a href="https://workspaceupdates.googleblog.com/2026/02/listen-to-audio-summaries-in-google-docs.html">workspaceupdates.googleblog.com/.../audio-summaries</a>
+              <a href="https://www.theverge.com/ai-artificial-intelligence">theverge.com/ai</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="t">2) Figma 深度接入 Google Chat</div>
+            <p class="p">是什么：在 Chat 接收设计通知、评论并直接回复。</p>
+            <p class="why"><b>为什么重要：</b>素材迭代从多工具跳转变为会话内闭环。</p>
+            <p class="p">适用：品牌营销、设计协作、增长团队</p>
+            <div class="links">
+              <a href="https://workspaceupdates.googleblog.com/2026/02/introducing-figma-in-google-chat.html">workspaceupdates.googleblog.com/.../figma-in-chat</a>
+              <a href="https://workspace.google.com/marketplace/app/figma/1035183305161">workspace.google.com/marketplace/.../figma</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="t">3) Google Calendar DLP 进入 Beta</div>
+            <p class="p">是什么：会议文本可被 DLP 策略审计/警告/拦截。</p>
+            <p class="why"><b>为什么重要：</b>AI普及后敏感信息误外发风险上升，DLP 变刚需。</p>
+            <p class="p">适用：金融、医疗、政企、SaaS销售</p>
+            <div class="links">
+              <a href="https://workspaceupdates.googleblog.com/2026/02/data-loss-prevention-policies-for.html">workspaceupdates.googleblog.com/.../dlp-calendar</a>
+              <a href="https://support.google.com/a?p=dlp_calendar">support.google.com/a?p=dlp_calendar</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="t">4) Product Hunt 出现 GPT‑5.3‑Codex‑Spark（待核实）</div>
+            <p class="p">是什么：PH feed 出现“超高速实时编码模型”条目。</p>
+            <p class="why"><b>为什么重要：</b>若属实，将推动低延迟AI产品新一轮竞争。</p>
+            <p class="p">适用：Agent产品、实时协作工具、开发者</p>
+            <div class="links">
+              <a href="https://www.producthunt.com/feed">producthunt.com/feed</a>
+              <a href="https://www.producthunt.com/products/openai">producthunt.com/products/openai</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="t">5) FlowGrid（AI CRM）持续受关注（待核实）</div>
+            <p class="p">是什么：PH feed 中“私有化、可自构建的 AI CRM”被频繁更新。</p>
+            <p class="why"><b>为什么重要：</b>AI+CRM 从“分析”走向“自动运营”。</p>
+            <p class="p">适用：销售运营、B2B增长、CS团队</p>
+            <div class="links">
+              <a href="https://www.producthunt.com/feed">producthunt.com/feed</a>
+              <a href="https://www.producthunt.com/products/flowgrid">producthunt.com/products/flowgrid</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="t">6) Toolify：AI 广告创意 / UGC 视频工具密集上新（待核实）</div>
+            <p class="p">是什么：Nextify.ai、heyfish.ai 等强调一键出广告素材。</p>
+            <p class="why"><b>为什么重要：</b>竞争焦点从“生成能力”转向“投放转化效率”。</p>
+            <p class="p">适用：DTC、电商、出海买量团队</p>
+            <div class="links">
+              <a href="https://www.toolify.ai/">toolify.ai</a>
+              <a href="https://www.toolify.ai/tool/nextify-ai">toolify.ai/tool/nextify-ai</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="t">7) NYT 披露 “Manosphere Report” AI 工作流</div>
+            <p class="p">是什么：LLM 自动转录/摘要约 80 档播客，做每日趋势简报。</p>
+            <p class="why"><b>为什么重要：</b>“数据分析 + 内容监测”的可复制范式。</p>
+            <p class="p">适用：舆情分析、品牌公关、内容战略</p>
+            <div class="links">
+              <a href="https://www.niemanlab.org/2026/02/how-the-new-york-times-uses-a-custom-ai-tool-to-track-the-manosphere/">niemanlab.org/.../nytimes-ai-tool</a>
+              <a href="https://www.nytimes.com/">nytimes.com</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="t">8) HN：实时AI创作与评测工具密集发布（待核实）</div>
+            <p class="p">是什么：MusePro（实时AI绘图）、TrustVector（信任评测）等。</p>
+            <p class="why"><b>为什么重要：</b>内容生成与企业级可信评测两极并进。</p>
+            <p class="p">适用：创作者平台、企业AI治理、DevTools</p>
+            <div class="links">
+              <a href="https://news.ycombinator.com/newest">news.ycombinator.com/newest</a>
+              <a href="https://github.com/StyleOf/MusePro">github.com/StyleOf/MusePro</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two" style="margin-top:14px">
+      <div class="section">
+        <div class="hd"><div class="title">B. 热门趋势雷达（3条）</div><div class="tag">现象 → 代表 → 跟进</div></div>
+        <div class="bd">
+          <ul class="bullets">
+            <li><b>从“写出来”到“听出来/看板化”</b> <span>→ 摘要→行动项→分发链路优先</span></li>
+            <li><b>营销进入“素材工业化”</b> <span>→ 用产能×反馈速度×合规成本筛工具</span></li>
+            <li><b>协作入口成主战场</b> <span>→ 优先能嵌入 Chat/Docs/CRM 的产品</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="hd"><div class="title">D. 技术突破（高影响）</div><div class="tag">只收影响应用边界</div></div>
+        <div class="bd">
+          <div class="item" style="margin-bottom:10px">
+            <div class="t">Claude Opus 4.6：1M context（beta）+ 稳定性提升</div>
+            <p class="p">影响：更适合长流程分析、复杂文档协同、多步骤自动化。</p>
+            <div class="links">
+              <a href="https://www.anthropic.com/news/claude-opus-4-6">anthropic.com/news/claude-opus-4-6</a>
+              <a href="https://platform.claude.com/docs/en/build-with-claude/effort">platform.claude.com/docs/.../effort</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="t">Terminal-Bench 2.0 + Harbor</div>
+            <p class="p">影响：Agent 评测从“能跑通”走向“可验证/可优化/可规模化”。</p>
+            <div class="links">
+              <a href="https://www.tbench.ai/news/announcement-2-0">tbench.ai/.../2-0</a>
+              <a href="https://harborframework.com/">harborframework.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top:14px">
+      <div class="hd"><div class="title">E. Jason 的 3 个可执行动作</div><div class="tag">泛营销 · 数据分析 · 内容生成</div></div>
+      <div class="bd">
+        <ol class="bullets">
+          <li><b>泛营销：</b>做一次“AI 素材产线 AB 实验”——选2个UGC/广告工具，统一预算跑72小时，只看CPA与素材衰减速度。</li>
+          <li><b>数据分析：</b>搭“每日舆情音频摘要”最小闭环——采集→转录→摘要→固定时间推送，先覆盖10个信源。</li>
+          <li><b>内容生成：</b>把“文档听摘要”接入周报——先听2分钟音频再下钻全文，提升信息消费效率。</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="brand">Generated by <b>Nora</b> · OpenClaw</div>
+      <div class="brand">分享提示：截图或直接转发图片到微信</div>
+    </div>
+  </div>
+</body>
+</html>
