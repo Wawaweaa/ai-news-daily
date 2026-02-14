@@ -5,251 +5,549 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AI产品日报 2026-02-14</title>
   <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1b33;
-      --text:#e8eefc;
-      --muted:#b9c6e6;
-      --accent:#7aa2ff;
-      --accent2:#52e0c4;
-      --warn:#ffcf5a;
-      --border:rgba(255,255,255,.10);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:linear-gradient(180deg, var(--bg), #070c16 65%);
-      color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
-    }
-    .wrap{max-width:980px;margin:0 auto;padding:48px 28px 56px}
-    .hero{
-      padding:28px 28px 22px;
-      border:1px solid var(--border);
-      background:linear-gradient(135deg, rgba(122,162,255,.16), rgba(82,224,196,.10));
-      border-radius:18px;
-      box-shadow:0 16px 60px rgba(0,0,0,.35);
-    }
-    .kicker{color:var(--muted);font-size:14px;letter-spacing:.3px}
-    h1{margin:10px 0 6px;font-size:30px;line-height:1.15}
-    h2{margin:0 0 4px;font-size:18px;color:var(--muted);font-weight:600}
-    .meta{margin-top:10px;color:var(--muted);font-size:13px}
-
-    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
-    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .pill{font-size:12px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.04)}
-    .pill b{color:var(--text);font-weight:700}
-
-    .section{margin-top:18px;border:1px solid var(--border);background:rgba(15,27,51,.72);border-radius:18px;overflow:hidden}
-    .section .hd{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .section .hd .title{font-weight:800}
-    .section .hd .tag{font-size:12px;color:var(--muted)}
-    .section .bd{padding:16px 18px 18px}
-
-    .bullets{margin:0;padding-left:18px}
-    .bullets li{margin:8px 0;color:var(--text)}
-    .bullets li span{color:var(--muted)}
-
-    .cards{display:grid;grid-template-columns:1fr;gap:12px}
-    .item{
-      border:1px solid var(--border);
-      background:rgba(8,12,22,.35);
-      border-radius:14px;
-      padding:12px 12px 10px;
-    }
-    .item .t{font-weight:800;margin-bottom:6px}
-    .item .p{color:var(--muted);margin:0 0 8px;line-height:1.5}
-    .item .why{margin:0 0 8px;line-height:1.5}
-    .item .why b{color:var(--warn)}
-    .links{display:flex;flex-wrap:wrap;gap:10px}
-    .links a{color:var(--accent);text-decoration:none;font-size:12.5px;word-break:break-all}
-    .links a:hover{text-decoration:underline}
-
-    .two{display:grid;grid-template-columns:1fr;gap:12px}
-    @media (min-width: 900px){
-      .grid{grid-template-columns: 1.2fr .8fr}
-      .cards{grid-template-columns:1fr 1fr}
-      .two{grid-template-columns:1fr 1fr}
+    :root {
+      --bg: #FAFAF8;
+      --text: #1A1A1A;
+      --muted: #6B7280;
+      --accent: #2563EB;
+      --accent-light: #EFF6FF;
+      --border: #E5E7EB;
+      --tag-bg: #F3F4F6;
+      --num-color: #D1D5DB;
     }
 
-    .summarylist{margin:10px 0 0;padding-left:0;list-style:none}
-    .summarylist li{padding:10px 12px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.04);margin-top:10px}
-    .en{display:block;font-weight:800}
-    .cn{display:block;color:var(--muted);margin-top:4px}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .footer{margin-top:18px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .brand{color:var(--muted)}
-    .brand b{color:var(--text)}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 24px 48px;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .header .brand {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .header .brand span {
+      color: var(--accent);
+    }
+    .header .date {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── TLDR / 省流版 ── */
+    .tldr {
+      margin-top: 24px;
+      padding: 20px 24px;
+      background: var(--accent-light);
+      border-radius: 12px;
+      border-left: 3px solid var(--accent);
+    }
+    .tldr-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .tldr ul {
+      list-style: none;
+      padding: 0;
+    }
+    .tldr li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .tldr li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── Section Header ── */
+    .section-header {
+      margin-top: 36px;
+      margin-bottom: 20px;
+      padding-left: 14px;
+      border-left: 3px solid var(--accent);
+    }
+    .section-header h2 {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .section-header .subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── News Item ── */
+    .news-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-item:last-child {
+      border-bottom: none;
+    }
+    .news-item-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .news-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--num-color);
+      line-height: 1;
+      min-width: 32px;
+      padding-top: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+    .news-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .news-title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+    .news-body {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+    .news-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    .news-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .tag {
+      font-size: 12px;
+      padding: 2px 8px;
+      background: var(--tag-bg);
+      color: var(--muted);
+      border-radius: 4px;
+    }
+    .news-sources {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .news-sources a {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .news-sources a:hover {
+      text-decoration: underline;
+    }
+    .news-sources a::after {
+      content: " ↗";
+      font-size: 10px;
+    }
+    .badge-unverified {
+      font-size: 11px;
+      color: #B45309;
+      background: #FEF3C7;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-weight: 500;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── Trend Item ── */
+    .trend-list {
+      list-style: none;
+      padding: 0;
+    }
+    .trend-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .trend-list li:last-child {
+      border-bottom: none;
+    }
+    .trend-list li strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .trend-list li span {
+      color: var(--muted);
+    }
+
+    /* ── Tech Item ── */
+    .tech-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .tech-item:last-child {
+      border-bottom: none;
+    }
+    .tech-item .tech-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .tech-item .tech-desc {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+    .tech-item .news-sources {
+      margin-top: 6px;
+    }
+
+    /* ── Action Items ── */
+    .action-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: action;
+    }
+    .action-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.7;
+      display: flex;
+      gap: 12px;
+    }
+    .action-list li:last-child {
+      border-bottom: none;
+    }
+    .action-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .action-content {
+      flex: 1;
+    }
+    .action-content strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="hero">
-      <div class="kicker">AI Product Daily · 5-minute Deep Read</div>
-      <h1>《AI产品日报》（5分钟深读版）</h1>
-      <h2>Jason 专版</h2>
-      <div class="meta">时间范围：过去24小时（截至 2026-02-14 07:00，Asia/Shanghai）</div>
 
-      <ul class="summarylist">
-        <li><span class="en">AI enters daily workflows fast.</span><span class="cn">AI正快速嵌入日常办公链路。</span></li>
-        <li><span class="en">Marketing AI gets more executional.</span><span class="cn">营销AI从“写文案”走向“投放执行”。</span></li>
-        <li><span class="en">Analytics shifts to audio and briefs.</span><span class="cn">数据解读正转向语音与摘要化。</span></li>
-        <li><span class="en">Distribution beats model novelty today.</span><span class="cn">今天更重要的是分发而非新模型。</span></li>
-        <li><span class="en">Trust and governance become product features.</span><span class="cn">合规与可信能力正产品化。</span></li>
+    <!-- Header -->
+    <div class="header">
+      <div class="brand"><span>AI</span>产品日报</div>
+      <div class="date">2026.02.14 · 5 分钟阅读</div>
+    </div>
+
+    <!-- TLDR -->
+    <div class="tldr">
+      <div class="tldr-title">30 秒速览</div>
+      <ul>
+        <li>AI 正快速嵌入日常办公链路，协作入口成主战场</li>
+        <li>营销 AI 从"写文案"走向"投放执行"，素材工业化加速</li>
+        <li>数据解读转向语音与摘要化，信息消费形态在变</li>
+        <li>今天更重要的是分发能力，而非新模型</li>
+        <li>合规与可信能力正在产品化</li>
       </ul>
-
-      <div class="pillrow">
-        <div class="pill"><b>重点场景</b> 泛营销</div>
-        <div class="pill"><b>重点场景</b> 数据分析</div>
-        <div class="pill"><b>重点场景</b> 内容生成</div>
-      </div>
     </div>
 
-    <div class="section" style="margin-top:18px">
-      <div class="hd"><div class="title">A. 今日必看 Top 8</div><div class="tag">每条：是什么 · 为什么重要 · 适用人群 · 来源</div></div>
-      <div class="bd">
-        <div class="cards">
-          <div class="item">
-            <div class="t">1) Google Docs 上线 Gemini Audio Summaries</div>
-            <p class="p">是什么：Google Docs 可把长文档生成“可听摘要”。</p>
-            <p class="why"><b>为什么重要：</b>缩短报告阅读时间，利好复盘与管理汇报。</p>
-            <p class="p">适用：内容团队、市场运营、咨询、管理层</p>
-            <div class="links">
-              <a href="https://workspaceupdates.googleblog.com/2026/02/listen-to-audio-summaries-in-google-docs.html">workspaceupdates.googleblog.com/.../audio-summaries</a>
-              <a href="https://www.theverge.com/ai-artificial-intelligence">theverge.com/ai</a>
-            </div>
-          </div>
+    <!-- Section: 今日必看 -->
+    <div class="section-header">
+      <h2>今日必看</h2>
+      <div class="subtitle">8 条值得关注的 AI 产品动态</div>
+    </div>
 
-          <div class="item">
-            <div class="t">2) Figma 深度接入 Google Chat</div>
-            <p class="p">是什么：在 Chat 接收设计通知、评论并直接回复。</p>
-            <p class="why"><b>为什么重要：</b>素材迭代从多工具跳转变为会话内闭环。</p>
-            <p class="p">适用：品牌营销、设计协作、增长团队</p>
-            <div class="links">
-              <a href="https://workspaceupdates.googleblog.com/2026/02/introducing-figma-in-google-chat.html">workspaceupdates.googleblog.com/.../figma-in-chat</a>
-              <a href="https://workspace.google.com/marketplace/app/figma/1035183305161">workspace.google.com/marketplace/.../figma</a>
-            </div>
+    <div class="news-item">
+      <div class="news-item-head">
+        <div class="news-num">01</div>
+        <div class="news-content">
+          <div class="news-title">Google Docs 上线 Gemini Audio Summaries</div>
+          <p class="news-body">Google Docs 可把长文档生成"可听摘要"。<strong>为什么重要：</strong>缩短报告阅读时间，利好复盘与管理汇报。</p>
+          <div class="news-tags">
+            <span class="tag">内容团队</span>
+            <span class="tag">市场运营</span>
+            <span class="tag">管理层</span>
           </div>
-
-          <div class="item">
-            <div class="t">3) Google Calendar DLP 进入 Beta</div>
-            <p class="p">是什么：会议文本可被 DLP 策略审计/警告/拦截。</p>
-            <p class="why"><b>为什么重要：</b>AI普及后敏感信息误外发风险上升，DLP 变刚需。</p>
-            <p class="p">适用：金融、医疗、政企、SaaS销售</p>
-            <div class="links">
-              <a href="https://workspaceupdates.googleblog.com/2026/02/data-loss-prevention-policies-for.html">workspaceupdates.googleblog.com/.../dlp-calendar</a>
-              <a href="https://support.google.com/a?p=dlp_calendar">support.google.com/a?p=dlp_calendar</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="t">4) Product Hunt 出现 GPT‑5.3‑Codex‑Spark（待核实）</div>
-            <p class="p">是什么：PH feed 出现“超高速实时编码模型”条目。</p>
-            <p class="why"><b>为什么重要：</b>若属实，将推动低延迟AI产品新一轮竞争。</p>
-            <p class="p">适用：Agent产品、实时协作工具、开发者</p>
-            <div class="links">
-              <a href="https://www.producthunt.com/feed">producthunt.com/feed</a>
-              <a href="https://www.producthunt.com/products/openai">producthunt.com/products/openai</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="t">5) FlowGrid（AI CRM）持续受关注（待核实）</div>
-            <p class="p">是什么：PH feed 中“私有化、可自构建的 AI CRM”被频繁更新。</p>
-            <p class="why"><b>为什么重要：</b>AI+CRM 从“分析”走向“自动运营”。</p>
-            <p class="p">适用：销售运营、B2B增长、CS团队</p>
-            <div class="links">
-              <a href="https://www.producthunt.com/feed">producthunt.com/feed</a>
-              <a href="https://www.producthunt.com/products/flowgrid">producthunt.com/products/flowgrid</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="t">6) Toolify：AI 广告创意 / UGC 视频工具密集上新（待核实）</div>
-            <p class="p">是什么：Nextify.ai、heyfish.ai 等强调一键出广告素材。</p>
-            <p class="why"><b>为什么重要：</b>竞争焦点从“生成能力”转向“投放转化效率”。</p>
-            <p class="p">适用：DTC、电商、出海买量团队</p>
-            <div class="links">
-              <a href="https://www.toolify.ai/">toolify.ai</a>
-              <a href="https://www.toolify.ai/tool/nextify-ai">toolify.ai/tool/nextify-ai</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="t">7) NYT 披露 “Manosphere Report” AI 工作流</div>
-            <p class="p">是什么：LLM 自动转录/摘要约 80 档播客，做每日趋势简报。</p>
-            <p class="why"><b>为什么重要：</b>“数据分析 + 内容监测”的可复制范式。</p>
-            <p class="p">适用：舆情分析、品牌公关、内容战略</p>
-            <div class="links">
-              <a href="https://www.niemanlab.org/2026/02/how-the-new-york-times-uses-a-custom-ai-tool-to-track-the-manosphere/">niemanlab.org/.../nytimes-ai-tool</a>
-              <a href="https://www.nytimes.com/">nytimes.com</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="t">8) HN：实时AI创作与评测工具密集发布（待核实）</div>
-            <p class="p">是什么：MusePro（实时AI绘图）、TrustVector（信任评测）等。</p>
-            <p class="why"><b>为什么重要：</b>内容生成与企业级可信评测两极并进。</p>
-            <p class="p">适用：创作者平台、企业AI治理、DevTools</p>
-            <div class="links">
-              <a href="https://news.ycombinator.com/newest">news.ycombinator.com/newest</a>
-              <a href="https://github.com/StyleOf/MusePro">github.com/StyleOf/MusePro</a>
-            </div>
+          <div class="news-sources">
+            <a href="https://workspaceupdates.googleblog.com/2026/02/listen-to-audio-summaries-in-google-docs.html">Google Workspace Blog</a>
+            <a href="https://www.theverge.com/ai-artificial-intelligence">The Verge</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="two" style="margin-top:14px">
-      <div class="section">
-        <div class="hd"><div class="title">B. 热门趋势雷达（3条）</div><div class="tag">现象 → 代表 → 跟进</div></div>
-        <div class="bd">
-          <ul class="bullets">
-            <li><b>从“写出来”到“听出来/看板化”</b> <span>→ 摘要→行动项→分发链路优先</span></li>
-            <li><b>营销进入“素材工业化”</b> <span>→ 用产能×反馈速度×合规成本筛工具</span></li>
-            <li><b>协作入口成主战场</b> <span>→ 优先能嵌入 Chat/Docs/CRM 的产品</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="hd"><div class="title">D. 技术突破（高影响）</div><div class="tag">只收影响应用边界</div></div>
-        <div class="bd">
-          <div class="item" style="margin-bottom:10px">
-            <div class="t">Claude Opus 4.6：1M context（beta）+ 稳定性提升</div>
-            <p class="p">影响：更适合长流程分析、复杂文档协同、多步骤自动化。</p>
-            <div class="links">
-              <a href="https://www.anthropic.com/news/claude-opus-4-6">anthropic.com/news/claude-opus-4-6</a>
-              <a href="https://platform.claude.com/docs/en/build-with-claude/effort">platform.claude.com/docs/.../effort</a>
-            </div>
+    <div class="news-item">
+      <div class="news-item-head">
+        <div class="news-num">02</div>
+        <div class="news-content">
+          <div class="news-title">Figma 深度接入 Google Chat</div>
+          <p class="news-body">在 Chat 中接收设计通知、评论并直接回复。<strong>为什么重要：</strong>素材迭代从多工具跳转变为会话内闭环。</p>
+          <div class="news-tags">
+            <span class="tag">品牌营销</span>
+            <span class="tag">设计协作</span>
+            <span class="tag">增长团队</span>
           </div>
-          <div class="item">
-            <div class="t">Terminal-Bench 2.0 + Harbor</div>
-            <p class="p">影响：Agent 评测从“能跑通”走向“可验证/可优化/可规模化”。</p>
-            <div class="links">
-              <a href="https://www.tbench.ai/news/announcement-2-0">tbench.ai/.../2-0</a>
-              <a href="https://harborframework.com/">harborframework.com</a>
-            </div>
+          <div class="news-sources">
+            <a href="https://workspaceupdates.googleblog.com/2026/02/introducing-figma-in-google-chat.html">Google Workspace Blog</a>
+            <a href="https://workspace.google.com/marketplace/app/figma/1035183305161">Google Marketplace</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="section" style="margin-top:14px">
-      <div class="hd"><div class="title">E. Jason 的 3 个可执行动作</div><div class="tag">泛营销 · 数据分析 · 内容生成</div></div>
-      <div class="bd">
-        <ol class="bullets">
-          <li><b>泛营销：</b>做一次“AI 素材产线 AB 实验”——选2个UGC/广告工具，统一预算跑72小时，只看CPA与素材衰减速度。</li>
-          <li><b>数据分析：</b>搭“每日舆情音频摘要”最小闭环——采集→转录→摘要→固定时间推送，先覆盖10个信源。</li>
-          <li><b>内容生成：</b>把“文档听摘要”接入周报——先听2分钟音频再下钻全文，提升信息消费效率。</li>
-        </ol>
+    <div class="news-item">
+      <div class="news-item-head">
+        <div class="news-num">03</div>
+        <div class="news-content">
+          <div class="news-title">Google Calendar DLP 进入 Beta</div>
+          <p class="news-body">会议文本可被 DLP 策略审计、警告与拦截。<strong>为什么重要：</strong>AI 普及后敏感信息误外发风险上升，DLP 变刚需。</p>
+          <div class="news-tags">
+            <span class="tag">金融</span>
+            <span class="tag">医疗</span>
+            <span class="tag">政企</span>
+            <span class="tag">SaaS</span>
+          </div>
+          <div class="news-sources">
+            <a href="https://workspaceupdates.googleblog.com/2026/02/data-loss-prevention-policies-for.html">Google Workspace Blog</a>
+            <a href="https://support.google.com/a?p=dlp_calendar">Google Support</a>
+          </div>
+        </div>
       </div>
     </div>
 
+    <div class="news-item">
+      <div class="news-item-head">
+        <div class="news-num">04</div>
+        <div class="news-content">
+          <div class="news-title">Product Hunt 出现 GPT-5.3-Codex-Spark <span class="badge-unverified">待核实</span></div>
+          <p class="news-body">PH feed 出现"超高速实时编码模型"条目。<strong>为什么重要：</strong>若属实，将推动低延迟 AI 产品新一轮竞争。</p>
+          <div class="news-tags">
+            <span class="tag">Agent 产品</span>
+            <span class="tag">实时协作</span>
+            <span class="tag">开发者</span>
+          </div>
+          <div class="news-sources">
+            <a href="https://www.producthunt.com/feed">Product Hunt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-item-head">
+        <div class="news-num">05</div>
+        <div class="news-content">
+          <div class="news-title">FlowGrid（AI CRM）持续受关注 <span class="badge-unverified">待核实</span></div>
+          <p class="news-body">PH feed 中"私有化、可自构建的 AI CRM"被频繁更新。<strong>为什么重要：</strong>AI+CRM 从"分析"走向"自动运营"。</p>
+          <div class="news-tags">
+            <span class="tag">销售运营</span>
+            <span class="tag">B2B 增长</span>
+            <span class="tag">CS 团队</span>
+          </div>
+          <div class="news-sources">
+            <a href="https://www.producthunt.com/products/flowgrid">Product Hunt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-item-head">
+        <div class="news-num">06</div>
+        <div class="news-content">
+          <div class="news-title">AI 广告创意 / UGC 视频工具密集上新 <span class="badge-unverified">待核实</span></div>
+          <p class="news-body">Nextify.ai、heyfish.ai 等强调一键出广告素材。<strong>为什么重要：</strong>竞争焦点从"生成能力"转向"投放转化效率"。</p>
+          <div class="news-tags">
+            <span class="tag">DTC</span>
+            <span class="tag">电商</span>
+            <span class="tag">出海买量</span>
+          </div>
+          <div class="news-sources">
+            <a href="https://www.toolify.ai/">Toolify</a>
+            <a href="https://www.toolify.ai/tool/nextify-ai">Nextify.ai</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-item-head">
+        <div class="news-num">07</div>
+        <div class="news-content">
+          <div class="news-title">NYT 披露 "Manosphere Report" AI 工作流</div>
+          <p class="news-body">LLM 自动转录/摘要约 80 档播客，做每日趋势简报。<strong>为什么重要：</strong>"数据分析 + 内容监测"的可复制范式。</p>
+          <div class="news-tags">
+            <span class="tag">舆情分析</span>
+            <span class="tag">品牌公关</span>
+            <span class="tag">内容战略</span>
+          </div>
+          <div class="news-sources">
+            <a href="https://www.niemanlab.org/2026/02/how-the-new-york-times-uses-a-custom-ai-tool-to-track-the-manosphere/">Nieman Lab</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-item-head">
+        <div class="news-num">08</div>
+        <div class="news-content">
+          <div class="news-title">实时 AI 创作与评测工具密集发布 <span class="badge-unverified">待核实</span></div>
+          <p class="news-body">MusePro（实时 AI 绘图）、TrustVector（信任评测）等。<strong>为什么重要：</strong>内容生成与企业级可信评测两极并进。</p>
+          <div class="news-tags">
+            <span class="tag">创作者平台</span>
+            <span class="tag">AI 治理</span>
+            <span class="tag">DevTools</span>
+          </div>
+          <div class="news-sources">
+            <a href="https://news.ycombinator.com/newest">Hacker News</a>
+            <a href="https://github.com/StyleOf/MusePro">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: 趋势雷达 -->
+    <div class="section-header">
+      <h2>趋势雷达</h2>
+      <div class="subtitle">3 个正在形成的行业趋势</div>
+    </div>
+
+    <ul class="trend-list">
+      <li>
+        <strong>从"写出来"到"听出来 / 看板化"</strong>
+        <span>摘要 → 行动项 → 分发链路优先。信息消费形态正在从文字阅读转向音频摘要和可视化看板。</span>
+      </li>
+      <li>
+        <strong>营销进入"素材工业化"</strong>
+        <span>用产能 × 反馈速度 × 合规成本筛选工具。AI 广告素材生产从"能做"变为"量产"。</span>
+      </li>
+      <li>
+        <strong>协作入口成为主战场</strong>
+        <span>优先选择能嵌入 Chat / Docs / CRM 的产品。独立应用在让位于平台内集成。</span>
+      </li>
+    </ul>
+
+    <!-- Section: 技术动态 -->
+    <div class="section-header">
+      <h2>技术动态</h2>
+      <div class="subtitle">对应用层有显著影响的技术突破</div>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-title">Claude Opus 4.6：1M context（beta）+ 稳定性提升</div>
+      <p class="tech-desc">更适合长流程分析、复杂文档协同、多步骤自动化。</p>
+      <div class="news-sources">
+        <a href="https://www.anthropic.com/news/claude-opus-4-6">Anthropic</a>
+        <a href="https://platform.claude.com/docs/en/build-with-claude/effort">Claude Docs</a>
+      </div>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-title">Terminal-Bench 2.0 + Harbor</div>
+      <p class="tech-desc">Agent 评测从"能跑通"走向"可验证 / 可优化 / 可规模化"。</p>
+      <div class="news-sources">
+        <a href="https://www.tbench.ai/news/announcement-2-0">TBench</a>
+        <a href="https://harborframework.com/">Harbor Framework</a>
+      </div>
+    </div>
+
+    <!-- Section: 行动建议 -->
+    <div class="section-header">
+      <h2>行动建议</h2>
+      <div class="subtitle">围绕泛营销 · 数据分析 · 内容生成</div>
+    </div>
+
+    <ul class="action-list">
+      <li>
+        <span class="action-num">1</span>
+        <div class="action-content">
+          <strong>泛营销：</strong>做一次"AI 素材产线 AB 实验"——选 2 个 UGC / 广告工具，统一预算跑 72 小时，只看 CPA 与素材衰减速度。
+        </div>
+      </li>
+      <li>
+        <span class="action-num">2</span>
+        <div class="action-content">
+          <strong>数据分析：</strong>搭"每日舆情音频摘要"最小闭环——采集 → 转录 → 摘要 → 固定时间推送，先覆盖 10 个信源。
+        </div>
+      </li>
+      <li>
+        <span class="action-num">3</span>
+        <div class="action-content">
+          <strong>内容生成：</strong>把"文档听摘要"接入周报——先听 2 分钟音频再下钻全文，提升信息消费效率。
+        </div>
+      </li>
+    </ul>
+
+    <!-- Footer -->
     <div class="footer">
-      <div class="brand">Generated by <b>Nora</b> · OpenClaw</div>
-      <div class="brand">分享提示：截图或直接转发图片到微信</div>
+      <span>AI产品日报 · 2026.02.14</span>
+      <span>多源交叉验证 · 标注"待核实"的条目请自行确认</span>
     </div>
+
   </div>
 </body>
 </html>
